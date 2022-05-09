@@ -2,8 +2,8 @@
 
 import numpy as np
 import random
-from base_batch_gen import Base_batch_generator
-from helper_functions import get_label_length_seq
+from utils.base_batch_gen import Base_batch_generator
+from utils.helper_functions import get_label_length_seq
 
 class RNN_batch_generator(Base_batch_generator):
     

@@ -81,7 +81,7 @@ class ModelCNN:
             batch_gen.reset()
             
             if epoch%save_freq==0:  
-                print 'Epoch', (epoch+1), 'completed out of',nEpochs,'training Acc: %.2f'%(epoch_acc/i)
+                print('Epoch', (epoch+1), 'completed out of',nEpochs,'training Acc: %.2f'%(epoch_acc/i))
                 path = model_save_path+"/epoch-"+str(epoch+1)
                 if not os.path.exists(path):
                     os.makedirs(path)

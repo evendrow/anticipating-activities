@@ -2,8 +2,8 @@
 
 import numpy as np
 import random
-from helper_functions import encode_content
-from base_batch_gen import Base_batch_generator
+from utils.helper_functions import encode_content
+from utils.base_batch_gen import Base_batch_generator
 
 class CNN_batch_generator(Base_batch_generator):
     

@@ -84,7 +84,7 @@ class ModelRNN:
             batch_gen.reset()
             
             if epoch%save_freq==0:  
-                print 'Epoch', (epoch+1), 'completed out of',nEpochs,'epoch loss: %.2f'%(epoch_loss/i)
+                print('Epoch', (epoch+1), 'completed out of',nEpochs,'epoch loss: %.2f'%(epoch_loss/i))
                 path = model_save_path+"/epoch-"+str(epoch+1)
                 if not os.path.exists(path):
                     os.makedirs(path)
