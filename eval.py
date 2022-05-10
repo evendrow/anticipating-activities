@@ -40,7 +40,7 @@ classes = content.split('\n')[:-1]
 for i in range(len(classes)):
     classes[i]=classes[i].split()[1]
     
-filelist = glob.glob(args.recog_dir + '/P*')
+filelist = glob.glob(args.recog_dir + '/p*') + glob.glob(args.recog_dir + '/P*')
 
 n_T=np.zeros(len(classes))
 n_F=np.zeros(len(classes))
@@ -59,5 +59,5 @@ for i in range(len(classes)):
     if n_T[i]+n_F[i] !=0:
         acc+=float(n_T[i])/(n_T[i]+n_F[i])
         n+=1
-print "MoC  %.4f"%(float(acc)/n)
+print("MoC  {:.4f}".format(float(acc)/n))
 

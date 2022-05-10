@@ -76,8 +76,10 @@ class ModelRNN:
         for epoch in range(nEpochs):
             epoch_loss = 0
             i=0
+            print("Iterations: ", len(batch_gen.list_of_examples)//batch_size)
             while(batch_gen.has_next()):
                 batch_in, batch_target = batch_gen.next_batch(batch_size)
+                #print(max([len(b) for b in batch_in]))
                 _, err = sess.run([optimizer, loss], feed_dict={self.input_seq: batch_in, self.target: batch_target})
                 i=i+1
                 epoch_loss += err       
@@ -107,7 +109,7 @@ class ModelRNN:
                 l = l + int(result[-1]*T)
             if int(result[-2]*T) > 0:
                 l = l + int(result[-2]*T)
-                label_seq.append(actions_dict.keys()[actions_dict.values().index(np.argmax(result[:-2]))])
+                label_seq.append(list(actions_dict.keys())[list(actions_dict.values()).index(np.argmax(result[:-2]))])
                 length_seq.append(result[-2]*T)
             if int(result[-1]*T) == 0 and int(result[-2]*T) == 0:
                 l = l+pred_len
